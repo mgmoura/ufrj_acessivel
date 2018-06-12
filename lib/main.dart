@@ -65,61 +65,65 @@ class _MyHomePageState extends State<MyHomePage> {
         title: new Text("+UFRJ"),
       ),
       body: new Center(
-        child: new Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            new Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                new Text("+UFRJ"),
-                new Icon(Icons.accessibility)
-              ],
-            ),
-            new Row(
-              children: <Widget>[
-                new Flexible(
-                  child: new Padding(
-                    padding: new EdgeInsets.symmetric(vertical: 20.0,horizontal: 40.0),
-                    child: new Material(
-                      borderRadius: new BorderRadius.circular(30.0),
-                      shadowColor: Colors.black,
-                      elevation: 4.0,
-                      child: new TextField(
-                        decoration: new InputDecoration(
-                          icon: new Padding(
-                            padding: new EdgeInsets.fromLTRB(10.0, 5.0, 0.0, 5.0),
-                            child: new Icon(Icons.search),
-                          ),
-                          hintText: "Search",
-                          border: InputBorder.none
-                        ),
-
-                      ),
-                    ),
-                  )
-                )
-              ],
-            ),
-            new Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                new Column(
+          child: new Wrap(
+            direction: Axis.horizontal,
+            //mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              new Padding(
+                padding: new EdgeInsets.symmetric(horizontal: 40.0),
+                child: new Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: <Widget>[
-                    new MeuButton(text: "Seleção",color: Colors.white70,borderRadius: 30.0 ),
-                    new MeuButton(text: "Aulas",color: Colors.white70,borderRadius: 30.0 ),
+                    new Text("+UFRJ",style: new TextStyle(fontSize: 25.0,fontFamily: 'Ubuntu', color: Colors.black87,fontWeight: FontWeight.bold )),
+                    new Icon(Icons.accessibility,size: 35.0,)
                   ],
                 ),
-                new Column(
-                  children: <Widget>[
-                    new MeuButton(text: "Alimentação",color: Colors.white70,borderRadius: 30.0 ),
-                    new MeuButton(text: "Contribuir",color: Colors.white70,borderRadius: 30.0 ),
-                  ],
-                )
-              ],
-            )
-          ],
+              ),
+              new Row(
+                children: <Widget>[
+                  new Flexible(
+                      child: new Padding(
+                        padding: new EdgeInsets.symmetric(vertical: 20.0,horizontal: 40.0),
+                        child: new Material(
+                          borderRadius: new BorderRadius.circular(30.0),
+                          shadowColor: Colors.black,
+                          elevation: 4.0,
+                          child: new TextField(
+                            decoration: new InputDecoration(
+                                icon: new Padding(
+                                  padding: new EdgeInsets.fromLTRB(10.0, 5.0, 0.0, 5.0),
+                                  child: new Icon(Icons.search),
+                                ),
+                                hintText: "Pesquise aqui",
+                                border: InputBorder.none
+                            ),
+
+                          ),
+                        ),
+                      )
+                  )
+                ],
+              ),
+              new Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  new Column(
+                    children: <Widget>[
+                      new MeuButton(text: "Serviços",color: Colors.white70,borderRadius: 30.0 ),
+                      new MeuButton(text: "Aulas",color: Colors.white70,borderRadius: 30.0 ),
+                    ],
+                  ),
+                  new Column(
+                    children: <Widget>[
+                      new MeuButton(text: "Alimentação",color: Colors.white70,borderRadius: 30.0 ),
+                      new MeuButton(text: "Contribuir",color: Colors.white70,borderRadius: 30.0 ),
+                    ],
+                  )
+                ],
+              )
+            ],
+          ),
         ),
-      ),
     );
   }
 }

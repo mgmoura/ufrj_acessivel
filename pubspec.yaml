@@ -55,3 +55,16 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.io/custom-fonts/#from-packages
+  fonts:
+    - family: Ubuntu
+      fonts:
+        - asset: Font/Ubuntu-Regular.ttf
+    - family: RobotoMono
+      fonts:
+        - asset: Font/RobotoMono-Regular.ttf
+    - family: CrimsonText
+      fonts:
+        - asset: Font/CrimsonText-Regular.ttf
+    - family: Plaster
+      fonts:
+        - asset: Font/Plaster-Regular.ttf

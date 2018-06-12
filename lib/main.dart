@@ -62,11 +62,93 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: new AppBar(
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
-        title: new Text("Ola"),
+        title: new Text("+UFRJ"),
       ),
       body: new Center(
+        child: new Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            new Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                new Text("+UFRJ"),
+                new Icon(Icons.accessibility)
+              ],
+            ),
+            new Row(
+              children: <Widget>[
+                new Flexible(
+                  child: new Padding(
+                    padding: new EdgeInsets.symmetric(vertical: 20.0,horizontal: 40.0),
+                    child: new Material(
+                      borderRadius: new BorderRadius.circular(30.0),
+                      shadowColor: Colors.black,
+                      elevation: 4.0,
+                      child: new TextField(
+                        decoration: new InputDecoration(
+                          icon: new Padding(
+                            padding: new EdgeInsets.fromLTRB(10.0, 5.0, 0.0, 5.0),
+                            child: new Icon(Icons.search),
+                          ),
+                          hintText: "Search",
+                          border: InputBorder.none
+                        ),
 
+                      ),
+                    ),
+                  )
+                )
+              ],
+            ),
+            new Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                new Column(
+                  children: <Widget>[
+                    new MeuButton(text: "Seleção",color: Colors.white70,borderRadius: 30.0 ),
+                    new MeuButton(text: "Aulas",color: Colors.white70,borderRadius: 30.0 ),
+                  ],
+                ),
+                new Column(
+                  children: <Widget>[
+                    new MeuButton(text: "Alimentação",color: Colors.white70,borderRadius: 30.0 ),
+                    new MeuButton(text: "Contribuir",color: Colors.white70,borderRadius: 30.0 ),
+                  ],
+                )
+              ],
+            )
+          ],
+        ),
       ),
     );
   }
 }
+
+class MeuButton extends StatelessWidget{
+
+  final text, color, borderRadius;
+
+  MeuButton({@required this.text, this.color = Colors.lightBlueAccent, this.borderRadius = 30.0});
+
+  @override
+  Widget build(BuildContext context) {
+    return new Padding(
+      padding: new EdgeInsets.all(20.0),
+      child: new Material(
+        borderRadius: new BorderRadius.circular(borderRadius),
+        shadowColor: Colors.black,
+        elevation: 6.0,
+        child: MaterialButton(
+          minWidth: 100.0,
+          height: 42.0,
+          onPressed: (){},
+          color: color,
+          child: Text(text),
+
+        ),
+      ),
+    );
+  }
+
+}
+
